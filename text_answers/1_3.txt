@@ -1,0 +1,35 @@
+
+判断 "n1 plus n2 is n3" の導出に必要なステップ数
+
+n1 = Z のとき, 1ステップ(P-ZEROのみ)
+n1 = S(Z) のとき、2ステップ(P-ZERO, P-SUCC)
+n1 = S(S(Z)) のとき、3ステップ(P-ZERO,P-SUCC,P-SUCC)
+
+Successor + 1 のステップ数が必要
+
+
+判断 "n1 times n2 is n3" の導出に必要なステップ数
+
+n1 = Z のとき 1ステップ(T-ZEROのみ)
+
+n1 = S(Z), n2 = Z のとき3ステップ(T-ZERO,P-ZERO,T-SUCC)
+n1 = S(Z), n2 = S(Z) のとき4ステップ
+n1 = S(Z), n3 = S(S(Z)) のとき5ステップ
+
+n1 = S(S(Z)), n2 = Z のとき4ステップ
+n1 = S(S(S(Z))), n2 = Z のとき5ステップ
+
+
+n1 が z のときは１ステップ.
+それ以外は、n1 の Successor + 1 と n2 の Successor の数 + 1 を足した回数
+のステップ数が必要
+
+
+
+
+
+
+
+
+
+

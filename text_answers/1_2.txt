@@ -1,0 +1,22 @@
+
+(1) 判断: S(S(S(Z))) plus S(Z) is S(S(S(S(Z)))) を導出する
+
+step1(P-ZERO)        : Z plus S(Z) is S(Z)
+step2(step1 & P-SUCC): S(Z) plus S(Z) is S(S(Z))
+step3(step2 & P-SUCC): S(S(Z)) plus S(Z) is S(S(S(Z)))
+step4(step3 & P-SUCC): S(S(S(Z))) plus S(Z) is S(S(S(S(Z))))
+
+
+(2) 判断: S(Z) plus S(S(S(Z))) is S(S(S(S(Z)))) を導出する
+
+step1(P-ZERO)        : Z plus S(S(S(Z))) is S(S(S(Z)))
+step2(step1 & P-SUCC): S(Z) plus S(S(S(Z))) is S(S(S(S(Z))))
+
+
+(3) 判断: S(S(S(Z))) times Z is Z を導出する
+
+step1(T-ZERO)                : Z times Z is Z
+step2(P-ZERO)                : Z plus Z is Z
+step3(step1 & step2 & T-SUCC): S(Z) times Z is Z
+step4(step3 & step2 & T-SUCC): S(S(Z)) times Z is Z
+step5(step4 & step2 & T-SUCC): S(S(S(Z))) times Z is Z
