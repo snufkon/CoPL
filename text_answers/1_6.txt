@@ -1,0 +1,21 @@
+CompareNat1 は n2 部分の当てはめ方により、異なる導出をすることができる.
+
+例: S(S(Z)) is less than S(S(S(S(S(Z))))) の導出
+
+- 導出例1
+S(S(Z)) is less than S(S(S(S(S(Z))))) by L-Trans {
+  S(S(Z)) is less than S(S(S(Z))) by L-Succ {};
+  S(S(S(Z))) is less than S(S(S(S(S(Z))))) by L-Trans {
+    S(S(S(Z))) is less than S(S(S(S(Z)))) by L-Succ {};
+    S(S(S(S(Z)))) is less than S(S(S(S(S(Z))))) by L-Succ {}
+  }
+}
+
+- 導出例2
+S(S(Z)) is less than S(S(S(S(S(Z))))) by L-Trans {
+  S(S(Z)) is less than S(S(S(S(Z)))) by L-Trans {
+    S(S(Z)) is less than S(S(S(Z))) by L-Succ {};
+    S(S(S(Z))) is less than S(S(S(S(Z)))) by L-Succ {}
+  };
+  S(S(S(S(Z)))) is less than S(S(S(S(S(Z))))) by L-Succ {}
+}

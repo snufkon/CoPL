@@ -1,0 +1,42 @@
+(1) Z is less than S(S(Z))
+
+- CompareNat1 で導出
+
+Z is less than S(S(Z)) by L-Trans {
+  Z is less than S(Z) by L-Succ {};
+  S(Z) is less than S(S(Z)) by L-Succ {}
+}
+
+- CompareNat2 で導出
+
+Z is less than S(S(Z)) by L-Zero {}
+
+- CompareNat3 で導出
+
+Z is less than S(S(Z)) by L-SuccR {
+  Z is less than S(Z) by L-Succ {}
+}
+
+
+(2) S(S(Z)) is less than S(S(S(S(Z))))
+
+- CompareNat1 で導出
+
+S(S(Z)) is less than S(S(S(S(Z)))) by L-Trans {
+  S(S(Z)) is less than S(S(S(Z))) by L-Succ {};
+  S(S(S(Z))) is less than S(S(S(S(Z)))) by L-Succ {}
+}
+
+- CompareNat2 で導出
+
+S(S(Z)) is less than S(S(S(S(Z)))) by L-SuccSucc {
+  S(Z) is less than S(S(S(Z))) by L-SuccSucc {
+    Z is less than S(S(Z)) by L-Zero {}
+  }
+}
+
+- CompareNat3 で導出
+
+S(S(Z)) is less than S(S(S(S(Z)))) by L-SuccR {
+  S(S(Z)) is less than S(S(S(Z))) by L-Succ {}
+}
